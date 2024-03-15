@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:proj_3/chanPass.dart';
-import 'package:proj_3/create-call.dart';
-import 'package:proj_3/feedback.dart';
-import 'package:proj_3/wallet.dart';
+import 'package:proj_3/about-profile/chanPass.dart';
+import 'package:proj_3/about-profile/create-call.dart';
+import 'package:proj_3/about-profile/feedback.dart';
+import 'package:proj_3/about-profile/wallet.dart';
 
 class profile extends StatefulWidget {
   const profile({super.key});

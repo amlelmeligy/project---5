@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proj_3/call.dart';
+import 'package:proj_3/about-profile/call.dart';
 
 class aboutwallet extends StatelessWidget {
   final String name;
