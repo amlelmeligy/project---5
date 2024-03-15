@@ -8,6 +8,10 @@ class chanPas extends StatefulWidget {
   State<chanPas> createState() => _chanPasState();
 }
 
+bool click1 = true;
+bool click2 = true;
+bool click3 = true;
+
 class _chanPasState extends State<chanPas> {
   @override
   Widget build(BuildContext context) {
@@ -27,18 +31,83 @@ class _chanPasState extends State<chanPas> {
                 ),
               ),
             ),
-            Container(
-                margin: EdgeInsets.only(top: 5),
-                child: change_pass(
-                    title: "Old Password", hint: "xxxxxxxxxxxxxxxxxxxx")),
-            Container(
-                margin: EdgeInsets.only(top: 5),
-                child: change_pass(
-                    title: "New Password", hint: "Maaaaaaaaa2908078")),
-            Container(
-              child: change_pass(
-                  title: "Repeat New Password", hint: "Maaaaaaaaa2908078"),
+
+            /////////////////////////////////////////////////////////////////
+            SizedBox(
+              height: 30,
             ),
+            TextField(
+              decoration: InputDecoration(
+                  focusColor: Color.fromARGB(255, 0, 0, 0),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        click1 = !click1;
+                      });
+                    },
+                    icon: Icon(
+                      click1 ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye,
+                    ),
+                    color: click1
+                        ? Color.fromARGB(255, 103, 104, 105)
+                        : Color.fromARGB(255, 61, 125, 177),
+                  ),
+                  hintText: "***************************",
+                  labelText: "Old Password ",
+                  border: OutlineInputBorder(
+                      gapPadding: 8, borderRadius: BorderRadius.circular(15))),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            //////////////////////////////////////////////////////////////
+            TextField(
+              decoration: InputDecoration(
+                  focusColor: Color.fromARGB(255, 0, 0, 0),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        click2 = !click2;
+                      });
+                    },
+                    icon: Icon(
+                      click2 ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye,
+                    ),
+                    color: click2
+                        ? Color.fromARGB(255, 103, 104, 105)
+                        : Color.fromARGB(255, 61, 125, 177),
+                  ),
+                  hintText: "Maaaaaaaaa2908078",
+                  labelText: "New Password ",
+                  border: OutlineInputBorder(
+                      gapPadding: 8, borderRadius: BorderRadius.circular(15))),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ///////////////////////////////////////////////////////////////
+            TextField(
+              decoration: InputDecoration(
+                  focusColor: Color.fromARGB(255, 0, 0, 0),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        click3 = !click3;
+                      });
+                    },
+                    icon: Icon(
+                      click3 ? FontAwesomeIcons.eyeSlash : FontAwesomeIcons.eye,
+                    ),
+                    color: click3
+                        ? Color.fromARGB(255, 103, 104, 105)
+                        : Color.fromARGB(255, 61, 125, 177),
+                  ),
+                  hintText: "Maaaaaaaaa2908078",
+                  labelText: "Repeat New Password ",
+                  border: OutlineInputBorder(
+                      gapPadding: 8, borderRadius: BorderRadius.circular(15))),
+            ),
+            //////////////////////////////////////////////////////////////////
             Container(
               height: 430,
               padding: EdgeInsets.only(top: 380, right: 20, left: 20),
@@ -125,58 +194,3 @@ class _chanPasState extends State<chanPas> {
 }
 
 ///////////////////////
-class change_pass extends StatelessWidget {
-  final String title;
-  final String hint;
-  final TextEditingController? controller;
-  // final Widget widget;
-
-  const change_pass({
-    super.key,
-    required this.title,
-    required this.hint,
-    this.controller,
-    // required this.widget,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          Container(
-            height: 55,
-            margin: EdgeInsets.only(top: 8),
-            padding: EdgeInsets.only(left: 14),
-            decoration: BoxDecoration(
-                border:
-                    Border.all(color: Color.fromARGB(202, 0, 0, 0), width: 1.2),
-                borderRadius: BorderRadius.circular(12)),
-            child: Row(
-              children: [
-                Expanded(
-                    child: TextFormField(
-                  cursorColor: Color.fromARGB(255, 255, 255, 255),
-                  controller: controller,
-                  decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      FontAwesomeIcons.eyeSlash,
-                      size: 18,
-                    ),
-                    hintText: hint,
-                  ),
-                ))
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}

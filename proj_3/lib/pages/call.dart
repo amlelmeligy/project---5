@@ -12,7 +12,7 @@ class _callesState extends State<calles> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(118, 99, 91, 208),
+        color: Color.fromARGB(118, 255, 255, 255),
         child: ListView(
           children: [],
         ),

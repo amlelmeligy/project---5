@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:proj_3/about-profile/changePass.dart';
 import 'package:proj_3/about-profile/create-call.dart';
 import 'package:proj_3/about-profile/feedback.dart';
@@ -55,7 +56,7 @@ class _profileState extends State<profile> {
                         width: 5,
                       ),
                       Icon(
-                        Icons.safety_check,
+                        FontAwesomeIcons.shield,
                         size: 18,
                         color: Colors.blue[300],
                       )
