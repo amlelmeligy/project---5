@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:proj_3/about-profile/chanPass.dart';
+import 'package:proj_3/about-profile/changePass.dart';
 import 'package:proj_3/about-profile/create-call.dart';
 import 'package:proj_3/about-profile/feedback.dart';
+import 'package:proj_3/about-profile/thankU.dart';
 import 'package:proj_3/about-profile/wallet.dart';
 
 class profile extends StatefulWidget {
@@ -108,7 +109,11 @@ class _profileState extends State<profile> {
             ),
             ////////////////////////////////////////////////////////////////////////////
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => thank()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.only(left: 5, right: 5, bottom: 5),
                 padding: EdgeInsets.all(5),
